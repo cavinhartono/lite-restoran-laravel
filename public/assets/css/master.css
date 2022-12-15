@@ -1,0 +1,51 @@
+@import url("./font.css");
+@import url("./theme.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    padding: 100px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+.header .header_logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header .nav {
+    list-style-type: none;
+    position: relative;
+    display: flex;
+    gap: 15px;
+}
+
+.nav .list .link {
+    text-decoration: none;
+    position: relative;
+    color: var(--black-secondary);
+}
+
+.nav .list.active .link {
+    color: var(--black-primary);
+}

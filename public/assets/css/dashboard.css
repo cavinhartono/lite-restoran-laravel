@@ -1,0 +1,37 @@
+@import url("./master.css");
+
+.home_content {
+    position: relative;
+    width: 350px;
+    line-height: 2.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    box-shadow: 8px 8px 45px rgba(255, 255, 255, 1),
+        -8px -8px 45px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+    list-style: none;
+    position: relative;
+    width: 100%;
+}
+
+.info .list {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.greating {
+    margin: 25px 0;
+    color: var(--black-secondary);
+}
+
+.info .title,
+.info .subtitle {
+    color: var(--black-primary);
+}
