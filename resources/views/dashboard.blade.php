@@ -19,11 +19,11 @@ Home
     <ul class="info">
       <li class="list">
         <p class="title">Nama</p>
-        <p class="subtitle" style="font-weight: 500;">Cavin Hartono Putra</p>
+        <p class="subtitle" style="font-weight: 500;">{{ Auth::user()->name }}</p>
       </li>
       <li class="list">
         <p class="title">Email</p>
-        <p class="subtitle" style="font-weight: 500;">cavin@gmail.com</p>
+        <p class="subtitle" style="font-weight: 500;">{{ Auth::user()->email }}</p>
       </li>
       <li class="list">
         <p class="title">Roles</p>

@@ -42,4 +42,10 @@ class FoodController extends Controller
         $food->delete();
         return redirect('/menu')->with('success', "Menu sudah dihapuskan");
     }
+
+    public function view()
+    {
+        // $foods = Food::all();
+        return view('food.view');
+    }
 }

@@ -24,7 +24,7 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::middleware('IsLogin')->group(function () {
-  Route::get('/', [FoodController::class, 'index']);
+  Route::get('/', [AuthController::class, 'dashboard']);
   Route::controller(RolesController::class)->group(function () {
     Route::get('/roles', 'index');
     Route::get('/roles/{id}/edit', 'edit');
@@ -32,12 +32,21 @@ Route::middleware('IsLogin')->group(function () {
     Route::delete('/roles/delete', 'destroy');
   });
   Route::controller(FoodController::class)->group(function () {
-    Route::get('/menu', 'index');
+    Route::get('/menu', 'view');
     Route::get('/menu/add', 'add');
     Route::post('/menu/add/store', 'store');
     Route::get('/menu/{id}/edit', 'edit');
     Route::get('/menu/{id}/view', 'view');
     Route::put('/menu/{id}/update', 'update');
     Route::delete('/menu/delete', 'destroy');
+  });
+  Route::controller(UserController::class)->group(function () {
+    Route::get('/user', 'index');
+    Route::get('/user/add', 'add');
+    Route::post('/user/add/store', 'store');
+    Route::get('/user/{id}/edit', 'edit');
+    Route::get('/user/{id}/view', 'view');
+    Route::put('/user/{id}/update', 'update');
+    Route::delete('/user/delete', 'destroy');
   });
 });

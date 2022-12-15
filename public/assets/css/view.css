@@ -1,0 +1,26 @@
+.food_list {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 40px;
+    background: var(--white-primary);
+    box-shadow: var(--boxShadow-primary);
+    border-radius: 8px;
+    color: var(--black-primary);
+}
+
+.card .description {
+    position: relative;
+    margin: 15px 0 8px;
+    color: var(--black-secondary);
+    line-height: 2em;
+    text-align: justify;
+}

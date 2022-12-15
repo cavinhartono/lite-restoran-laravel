@@ -4,12 +4,19 @@
 Roles
 @endpush
 
+@push('style')
+<link rel="stylesheet" href="{{ asset('assets/css/roles.css') }}">
+@endpush
+
 @section('content')
 <section class="roles">
+  <div class="figure">
+    <h4 class="title">Kumpulan Roles</h4>
+  </div>
   <table class="table">
-    <thead>
+    <thead style="background: #fafafa">
       <tr>
-        <th>ID</th>
+        <th></th>
         <th>Role</th>
         <th>Name</th>
         <th>Email</th>
@@ -18,14 +25,18 @@ Roles
     </thead>
     <tbody>
       @forelse ($users as $user)
-      <tr>
-        <td>{{ $loop->iteration }}</td>
+      <tr style="border-bottom: 1px solid #ddd;">
+        <td style="text-align: center">{{ $loop->iteration }}</td>
         <td>{{ $user->role }}</td>
-        <td>{{ $user->name }}</td>
+        <td style="font-weight: 500;">{{ $user->name }}</td>
         <td>{{ $user->email }}</td>
         <td>
-          <a href="/roles/{{ $user->id }}/edit">Edit</a>
-          <a href="/roles/{{ $user->id }}/delete">Delete</a>
+          <a href="/roles/{{ $user->id }}/edit">
+            <span class="icon"></span>
+          </a>
+          <a href="/roles/{{ $user->id }}/delete">
+            <span class="icon"></span>
+          </a>
         </td>
       </tr>
       @empty
@@ -36,7 +47,7 @@ Roles
     </tbody>
     <tfoot>
       <tr>
-        <th>ID</th>
+        <th></th>
         <th>Role</th>
         <th>Name</th>
         <th>Email</th>
