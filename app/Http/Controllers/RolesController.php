@@ -8,15 +8,24 @@ use Spatie\Permission\Models\Role;
 
 class RolesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:view-role')->only('view');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $users = User::all();
-        return view('roles.index', compact(['users']));
+        if ($request->user()->hasRole('superuser')) {
+            return view('roles.index', compact(['users']));
+        } else {
+            return 'Khusus Superuser';
+        }
     }
 
     /**

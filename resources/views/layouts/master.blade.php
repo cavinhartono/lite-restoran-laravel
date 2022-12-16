@@ -18,16 +18,15 @@
         <a href="#" class="link">Ingri</a>
       </div>
       <ul class="nav">
+        @can('view-user')
         <li class="list"><a href="/user" class="link">User</a></li>
+        @endcan
         <li class="list active"><a href="/" class="link">Home</a></li>
+        @can('view-role')
         <li class="list"><a href="/roles" class="link">Roles</a></li>
+        @endcan
         <li class="list"><a href="/menu" class="link">Menu</a></li>
         <li class="list"><a href="/auth/logout" class="link">Logout</a></li>
-        <!-- <div class="profile">
-          <li class="list">
-            <span class="photo"></span>
-          </li>
-        </div> -->
       </ul>
     </header>
     @yield('content')

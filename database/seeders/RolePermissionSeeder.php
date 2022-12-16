@@ -52,34 +52,48 @@ class RolePermissionSeeder extends Seeder
                 'email' => 'johndoe@gmail.com',
                 'password' => Hash::make('johndoe1933'),
             ]);
-            Permission::create(['name' => 'view food']);
-            Permission::create(['name' => 'create food']);
-            Permission::create(['name' => 'edit food']);
-            Permission::create(['name' => 'delete food']);
-            Permission::create(['name' => 'publish food']);
-            Permission::create(['name' => 'unpublish food']);
+            Permission::create(['name' => 'view-user']);
+            Permission::create(['name' => 'create-user']);
+            Permission::create(['name' => 'edit-user']);
+            Permission::create(['name' => 'delete-user']);
+            Permission::create(['name' => 'view-role']);
+            Permission::create(['name' => 'edit-role']);
+            Permission::create(['name' => 'view-food']);
+            Permission::create(['name' => 'create-food']);
+            Permission::create(['name' => 'edit-food']);
+            Permission::create(['name' => 'delete-food']);
+            Permission::create(['name' => 'publish-food']);
+            Permission::create(['name' => 'unpublish-food']);
 
             $superuser = Role::create(['name' => 'superuser']);
             $admin = Role::create(['name' => 'admin']);
             $customer = Role::create(['name' => 'customer']);
 
             $superuser->givePermissionTo([
-                'view food',
-                'create food',
-                'edit food',
-                'delete food',
-                'publish food',
-                'unpublish food',
+                'view-user',
+                'create-user',
+                'edit-user',
+                'delete-user',
+                'view-role',
+                'edit-role',
+                'view-food',
+                'create-food',
+                'edit-food',
+                'delete-food',
+                'publish-food',
+                'unpublish-food',
             ]);
 
             $admin->givePermissionTo([
-                'view food',
-                'create food',
-                'edit food',
-                'delete food',
+                'view-user',
+                'edit-user',
+                'view-food',
+                'create-food',
+                'edit-food',
+                'delete-food',
             ]);
 
-            $customer->givePermissionTo('view food');
+            $customer->givePermissionTo('view-food');
 
             $superuser1->assignRole('superuser');
             $admin1->assignRole('admin');

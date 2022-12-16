@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\RolesController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,12 +26,18 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::middleware('IsLogin')->group(function () {
   Route::get('/', [AuthController::class, 'dashboard']);
-  Route::controller(RolesController::class)->group(function () {
-    Route::get('/roles', 'index');
-    Route::get('/roles/{id}/edit', 'edit');
-    Route::put('/roles/{id}/update', 'update');
-    Route::delete('/roles/delete', 'destroy');
+
+  // Roles
+  Route::middleware('can:view-role')->group(function () {
+    Route::controller(RolesController::class)->group(function () {
+      Route::get('/roles', 'index');
+      Route::get('/roles/{id}/edit', 'edit');
+      Route::put('/roles/{id}/update', 'update');
+      Route::delete('/roles/delete', 'destroy');
+    });
   });
+
+  // Foods
   Route::controller(FoodController::class)->group(function () {
     Route::get('/menu', 'view');
     Route::get('/menu/add', 'add');
@@ -40,13 +47,15 @@ Route::middleware('IsLogin')->group(function () {
     Route::put('/menu/{id}/update', 'update');
     Route::delete('/menu/delete', 'destroy');
   });
-  Route::controller(UserController::class)->group(function () {
-    Route::get('/user', 'index');
-    Route::get('/user/add', 'add');
-    Route::post('/user/add/store', 'store');
-    Route::get('/user/{id}/edit', 'edit');
-    Route::get('/user/{id}/view', 'view');
-    Route::put('/user/{id}/update', 'update');
-    Route::delete('/user/delete', 'destroy');
+
+  // Users
+  Route::middleware('can:view-user')->group(function () {
+    Route::controller(UserController::class)->group(function () {
+      Route::get('/user', 'index');
+      Route::get('/user/{id}/edit', 'edit');
+      Route::get('/user/{id}/view', 'view');
+      Route::put('/user/{id}/update', 'update');
+      Route::delete('/user/delete', 'destroy');
+    });
   });
 });
