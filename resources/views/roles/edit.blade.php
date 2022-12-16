@@ -4,6 +4,10 @@
 Sunting Akun {{$user->name}}
 @endpush
 
+@push('style')
+<link rel="stylesheet" href="{{ asset('assets/css/edit.css') }}">
+@endpush
+
 <?php
 $name = explode(' ', trim($user->name))[0];
 ?>
@@ -27,7 +31,11 @@ $name = explode(' ', trim($user->name))[0];
     <div class="field">
       <div class="input">
         <label for="roles">Roles<sup>*</sup></label>
-        <input type="text" name="roles" id="roles">
+        <select name="role" id="roles">
+          @foreach ($roles as $role)
+          <option value="{{ $role->id }}">{{ $role->name }}</option>
+          @endforeach
+        </select>
       </div>
     </div>
     <div class="field">

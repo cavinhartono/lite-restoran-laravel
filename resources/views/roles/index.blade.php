@@ -32,10 +32,10 @@ Roles
         <td>{{ $user->email }}</td>
         <td>
           <a href="/roles/{{ $user->id }}/edit">
-            <span class="icon"></span>
+            <span class="icon">Edit</span>
           </a>
           <a href="/roles/{{ $user->id }}/delete">
-            <span class="icon"></span>
+            <span class="icon">Delete</span>
           </a>
         </td>
       </tr>

@@ -1,0 +1,45 @@
+@import url("./font.css");
+@import url("./theme.css");
+
+.edit {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    background: var(--white-primary);
+    box-shadow: var(--boxShadow-primary);
+}
+
+.edit .title {
+    margin-bottom: 15px;
+    color: var(--black-primary);
+    font-size: var(--font-medium);
+    font-weight: 600;
+}
+
+label {
+    color: var(--black-primary);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.edit form {
+    position: relative;
+    width: 100%;
+}
+
+.field {
+    width: 100%;
+}
+
+input,
+select {
+    margin: 8px 0;
+    outline: none;
+    position: relative;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: var(--black-primary);
+}

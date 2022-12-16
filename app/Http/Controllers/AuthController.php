@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -44,7 +45,7 @@ class AuthController extends Controller
         $request->validate(
             [
                 'name' => 'required',
-                'email' => 'required|unique:user|email',
+                'email' => 'required|unique:users',
                 'password' => 'required|min:8',
                 'phone_number' => 'required',
             ],
@@ -65,7 +66,14 @@ class AuthController extends Controller
             'phone_number' => $request->phone_number
         ];
 
-        if (Auth::attempt($create)) {
+        User::create($create);
+
+        $get = [
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
+
+        if (Auth::attempt($get)) {
             return view('dashboard');
         } else {
             return redirect('/auth')->withErrors('Email dan Password harus disesuaikan');

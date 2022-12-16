@@ -25,9 +25,18 @@ Home
         <p class="title">Email</p>
         <p class="subtitle" style="font-weight: 500;">{{ Auth::user()->email }}</p>
       </li>
+
       <li class="list">
+        <?php
+
+        use Illuminate\Support\Facades\Auth;
+        use Spatie\Permission\Models\Role;
+
+        $role = Role::find(Auth::user()->id);
+
+        ?>
         <p class="title">Roles</p>
-        <p class="subtitle" style="font-weight: 500;">User</p>
+        <p class="subtitle" style="font-weight: 500; text-transform: capitalize;">{{ $role->name }}</p>
       </li>
     </ul>
   </div>
