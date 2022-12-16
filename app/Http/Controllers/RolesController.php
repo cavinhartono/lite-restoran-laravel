@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
 class RolesController extends Controller
@@ -53,7 +51,7 @@ class RolesController extends Controller
     public function update(Request $request, $id)
     {
         $role = Role::find($id);
-        $role->update($request->except('_token', 'submit'));
+        $role->update($request->except(['_token', 'submit']));
         return redirect('/roles')->with('success', 'Role sudah diupdatekan.');
     }
 

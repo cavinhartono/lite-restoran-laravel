@@ -33,13 +33,13 @@ $name = explode(' ', trim($user->name))[0];
         <label for="roles">Roles<sup>*</sup></label>
         <select name="role" id="roles">
           @foreach ($roles as $role)
-          <option value="{{ $role->id }}">{{ $role->name }}</option>
+          <option value="{{ $role->name }}">{{ $role->name }}</option>
           @endforeach
         </select>
       </div>
     </div>
     <div class="field">
-      <button class="btn primary">Update</button>
+      <button type="submit" class="btn primary" name="submit">Update</button>
     </div>
   </form>
 </section>
