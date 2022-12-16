@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
 class RolesController extends Controller
@@ -20,7 +22,7 @@ class RolesController extends Controller
      */
     public function index(Request $request)
     {
-        $users = User::all();
+        $users = User::with('roles')->get();
         if ($request->user()->hasRole('superuser')) {
             return view('roles.index', compact(['users']));
         } else {

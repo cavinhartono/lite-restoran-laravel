@@ -1,12 +1,16 @@
 .roles {
     position: relative;
     width: 100%;
+    padding: 25px;
+    border-radius: 8px;
+    background: var(--white-primary);
+    box-shadow: var(--boxShadow-primary);
 }
 
 .figure {
     position: relative;
     width: 100%;
-    margin: 25px 0;
+    margin: 15px 0;
 }
 
 .figure .title {
@@ -43,4 +47,23 @@
 }
 .roles table tbody tr:nth-child(even):hover td {
     background: #fafafa;
+}
+
+.delete {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 20;
+}
+
+.delete.active {
+    visibility: visible;
+    opacity: 1;
 }

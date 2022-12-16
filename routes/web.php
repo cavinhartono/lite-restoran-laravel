@@ -33,7 +33,7 @@ Route::middleware('IsLogin')->group(function () {
       Route::get('/roles', 'index');
       Route::get('/roles/{id}/edit', 'edit');
       Route::put('/roles/{id}/update', 'update');
-      Route::delete('/roles/delete', 'destroy');
+      Route::delete('/roles/{id}/delete', 'destroy');
     });
   });
 

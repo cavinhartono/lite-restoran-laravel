@@ -27,16 +27,8 @@ Home
       </li>
 
       <li class="list">
-        <?php
-
-        use Illuminate\Support\Facades\Auth;
-        use Spatie\Permission\Models\Role;
-
-        $role = Role::find(Auth::user()->id);
-
-        ?>
         <p class="title">Roles</p>
-        <p class="subtitle" style="font-weight: 500; text-transform: capitalize;">{{ $role->name }}</p>
+        <p class="subtitle" style="font-weight: 500; text-transform: capitalize;">{{ Auth::user()->roles->first()->name }}</p>
       </li>
     </ul>
   </div>
