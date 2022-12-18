@@ -5,13 +5,21 @@
     --white-secondary: #fafafa;
     --boxShadow-primary: -8px -8px 45px rgba(255, 255, 255, 1),
         8px 8px 45px rgba(34, 34, 34, 0.1);
-    --boxShadow-secondary: 0px 8px 45px rgba(34, 34, 34, 0.1);
+    --boxShadow-secondary: 0px 8px 18px rgba(34, 34, 34, 0.1);
     --primary-color: #2b3467;
     --secondary-color: #f00;
     --font-small: 18px;
     --font-reguler: 20px;
     --font-medium: 32px;
     --font-large: 48px;
+}
+
+.title {
+    color: var(--black-primary);
+}
+
+.subtitle {
+    color: var(--black-secondary);
 }
 
 .icon {
