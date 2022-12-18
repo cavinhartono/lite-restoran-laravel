@@ -9,20 +9,21 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('user.index');
+        $users = User::with('roles')->paginate(5);
+        return view('user.index', compact(['users']));
     }
 
     public function edit($id)
     {
         $user = User::find($id);
-        return view('food.edit', compact(['food']));
+        return view('user.edit', compact(['user']));
     }
 
     public function update($id, Request $request)
     {
         $user = User::find($id);
-        $user->update($request->expect('_token', 'submit'));
-        return redirect('/menu')->with('success', 'Menu sudah diupdatekan.');
+        $user->update($request->except(['_token', 'submit']));
+        return redirect('/user')->with('success', 'Menu sudah diupdatekan.');
     }
 
     public function destroy($id)
