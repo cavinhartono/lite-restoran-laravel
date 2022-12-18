@@ -29,26 +29,6 @@
     background: #ddd;
 }
 
-.roles table {
-    margin-top: 25px;
-    position: relative;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.roles table th {
-    padding: 8px;
-    font-weight: 600;
-    color: #222;
-}
-
-.roles table tbody td {
-    padding: 12px;
-}
-.roles table tbody tr:nth-child(even):hover td {
-    background: #fafafa;
-}
-
 .delete {
     position: absolute;
     top: -50%;

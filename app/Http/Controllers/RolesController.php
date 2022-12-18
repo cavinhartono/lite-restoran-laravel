@@ -20,7 +20,7 @@ class RolesController extends Controller
      */
     public function index(Request $request)
     {
-        $users = User::with('roles')->get();
+        $users = User::with('roles')->paginate(5);
         if ($request->user()->hasRole('superuser')) {
             return view('roles.index', compact(['users']));
         } else {
@@ -50,8 +50,9 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $role = Role::find($id);
-        $role->update($request->except(['_token', 'submit']));
+        $user = User::find($id);
+        $user->syncRoles($request->role);
+        $user->save();
         return redirect('/roles')->with('success', 'Role sudah diupdatekan.');
     }
 

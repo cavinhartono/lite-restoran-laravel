@@ -16,21 +16,37 @@ Home
   </div>
   @endif
   <div class="home_content">
-    <ul class="info">
-      <li class="list">
-        <p class="title">Nama</p>
-        <p class="subtitle" style="font-weight: 500;">{{ Auth::user()->name }}</p>
-      </li>
-      <li class="list">
-        <p class="title">Email</p>
-        <p class="subtitle" style="font-weight: 500;">{{ Auth::user()->email }}</p>
-      </li>
-
-      <li class="list">
-        <p class="title">Roles</p>
-        <p class="subtitle" style="font-weight: 500; text-transform: capitalize;">{{ Auth::user()->roles->first()->name }}</p>
-      </li>
-    </ul>
+    <div class="header_content">
+      <ul class="info">
+        <li class="list">
+          <p class="title">Nama</p>
+          <p class="subtitle" style="font-weight: 500;">{{ Auth::user()->name }}</p>
+        </li>
+        <li class="list">
+          <p class="title">Email</p>
+          <p class="subtitle" style="font-weight: 500;">{{ Auth::user()->email }}</p>
+        </li>
+        <li class="list">
+          <p class="title">Roles</p>
+          <p class="subtitle" style="font-weight: 500; text-transform: capitalize;">{{ Auth::user()->roles->first()->name }}</p>
+        </li>
+      </ul>
+      <ul class="info">
+        <li class="list">
+          <p class="title">Nama</p>
+          <p class="subtitle" style="font-weight: 500;">{{ Auth::user()->name }}</p>
+        </li>
+        <li class="list">
+          <p class="title">Email</p>
+          <p class="subtitle" style="font-weight: 500;">{{ Auth::user()->email }}</p>
+        </li>
+  
+        <li class="list">
+          <p class="title">Roles</p>
+          <p class="subtitle" style="font-weight: 500; text-transform: capitalize;">{{ Auth::user()->roles->first()->name }}</p>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
 @endsection
