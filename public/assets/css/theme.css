@@ -137,3 +137,17 @@ svg {
     background: var(--black-primary);
     color: var(--white-primary);
 }
+
+.field {
+    width: 100%;
+}
+
+.two {
+    position: relative;
+    display: flex;
+    gap: 12px;
+}
+
+.two .input {
+    width: 100%;
+}

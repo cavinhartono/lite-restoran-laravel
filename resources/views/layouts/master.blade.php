@@ -40,6 +40,12 @@
     }
 
     list.forEach((item) => item.addEventListener('click', getList));
+
+    window.addEventListener('scroll', function() {
+      return this.scrollY >= 50 ?
+        document.querySelector('header').classList.add("scroller") :
+        document.querySelector('header').classList.remove("scroller");
+    });
   </script>
 </body>
 

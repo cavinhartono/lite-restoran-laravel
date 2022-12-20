@@ -47,7 +47,6 @@ class AuthController extends Controller
                 'name' => 'required',
                 'email' => 'required|unique:users',
                 'password' => 'required|min:8',
-                'phone_number' => 'required',
             ],
             [
                 'name.required' => 'Nama harus diisi',
@@ -55,7 +54,6 @@ class AuthController extends Controller
                 'email.unique' => 'Email sudah ada, mohon isi lagi',
                 'password.required' => 'Password harus diisi',
                 'password.min' => 'Password harus disesuaikan minimal 8 karakter',
-                'phone_number.required' => 'Nomor telepon harus diisi',
             ]
         );
 
@@ -75,7 +73,8 @@ class AuthController extends Controller
         ];
 
         if (Auth::attempt($get)) {
-            return view('dashboard');
+            $name = explode(' ', trim(Auth::user()->name))[0];
+            return view('dashboard')->with('success', "Selamat datang, $name.");
         } else {
             return redirect('/auth')->withErrors('Email dan Password harus disesuaikan');
         }

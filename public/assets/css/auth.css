@@ -90,6 +90,10 @@ body.aktif {
     left: 50%;
 }
 
+sup {
+    color: #f43648;
+}
+
 .formBx .signinForm {
     transition-delay: 0.25s;
 }
@@ -131,7 +135,7 @@ body.aktif {
 .formBx .form form input {
     outline: none;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;

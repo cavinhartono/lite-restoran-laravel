@@ -55,7 +55,7 @@ Route::middleware('IsLogin')->group(function () {
       Route::get('/user/{id}/edit', 'edit');
       Route::get('/user/{id}/view', 'view');
       Route::put('/user/{id}/update', 'update');
-      Route::delete('/user/delete', 'destroy');
+      Route::delete('/user/{id}/delete', 'destroy');
     });
   });
 });

@@ -24,6 +24,8 @@
     justify-content: space-between;
     align-items: center;
     z-index: 5;
+    transition: 0.3s;
+    background: var(--white-primary);
 }
 
 .header .header_logo {
@@ -48,4 +50,8 @@
 
 .nav .list.active .link {
     color: var(--black-primary);
+}
+
+.header.scroller {
+    box-shadow: var(--boxShadow-secondary);
 }

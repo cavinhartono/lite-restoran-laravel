@@ -51,28 +51,17 @@ Users
               </svg>
             </span>
           </a>
-          <button onclick="document.querySelector('.delete').classList.add('active')">
-            <span class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="auto" height="auto" viewBox="0 0 512 512">
-                <path d="M289.94,256l95-95A24,24,0,0,0,351,127l-95,95-95-95A24,24,0,0,0,127,161l95,95-95,95A24,24,0,1,0,161,385l95-95,95,95A24,24,0,0,0,385,351Z" />
-              </svg>
-            </span>
-          </button>
-          <div class="delete">
-            <div class="content">
-              <div class="content_title">
-                <h2>Apakah {{ $user->name }} dihapus?</h2>
-              </div>
-              <div class="content_button">
-                <form action="/user/{{ $user->id }}/delete" method="POST">
-                  @csrf
-                  @method('DELETE')
-                  <span class="btn danger">Delete</span>
-                </form>
-                <button class="btn primary" onclick="document.querySelector('.delete').classList.remove('active')">Tidak</button>
-              </div>
-            </div>
-          </div>
+          <form action="/user/{{ $user->id }}/delete" method="post">
+            @csrf
+            @method('DELETE')
+            <button style="outline: none; border: none; background: transparent; display: flex; align-items: center">
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="auto" height="auto" viewBox="0 0 512 512">
+                  <path d="M289.94,256l95-95A24,24,0,0,0,351,127l-95,95-95-95A24,24,0,0,0,127,161l95,95-95,95A24,24,0,1,0,161,385l95-95,95,95A24,24,0,0,0,385,351Z" />
+                </svg>
+              </span>
+            </button>
+          </form>
         </td>
       </tr>
       @empty

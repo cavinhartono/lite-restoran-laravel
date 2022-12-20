@@ -26,9 +26,23 @@
         <form action="/auth/login" method="POST">
           @csrf
           <h3>Masuk Akun</h3>
-          <input type="text" placeholder="Email" name="email" value="{{ Session::get('email') }}">
-          <input type="password" placeholder="Password" name="password" value="{{ Session::get('password') }}">
-          <input type="submit" value="Masuk" name="submit">
+          <div class="field">
+            <div class="input">
+              <label for="email">Email<sup>*</sup></label>
+              <input type="text" placeholder="johndoe@gmail.com" name="email" id="email" value="{{ Session::get('email') }}" required>
+            </div>
+          </div>
+          <div class="field">
+            <div class="input">
+              <label for="password">Password<sup>*</sup></label>
+              <input type="password" placeholder="Enter your password" name="password" id="password" value="{{ Session::get('password') }}" required>
+            </div>
+          </div>
+          <div class="field">
+            <div class="input">
+              <input type="submit" value="Masuk" name="submit">
+            </div>
+          </div>
           <a href="#" class="forget">Lupa Password</a>
         </form>
       </div>
@@ -36,11 +50,29 @@
         <form action="/auth/register" method="POST">
           @csrf
           <h3>Daftar Akun</h3>
-          <input type="text" placeholder="Nomor Telepon" name="phone_number">
-          <input type="text" placeholder="Name" name="name">
-          <input type="text" placeholder="Email" name="email">
-          <input type="password" placeholder="Password" name="password">
-          <input type="submit" value="Buat" name="submit">
+          <div class="field">
+            <div class="input">
+              <label for="name">Nama<sup>*</sup></label>
+              <input type="text" id="name" placeholder="John Doe" name="name" required>
+            </div>
+          </div>
+          <div class="field">
+            <div class="input">
+              <label for="email">Email<sup>*</sup></label>
+              <input type="text" id="email" placeholder="johndoe@gmail.com" name="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <div class="input">
+              <label for="password">Password<sup>*</sup></label>
+              <input type="password" id="password" placeholder="Enter your password" name="password" required>
+            </div>
+          </div>
+          <div class="field">
+            <div class="input">
+              <input type="submit" value="Buat" name="submit">
+            </div>
+          </div>
         </form>
       </div>
     </div>

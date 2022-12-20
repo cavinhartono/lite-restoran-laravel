@@ -18,18 +18,14 @@ $name = explode(' ', trim($user->name))[0];
   <form method="POST" action="/user/{{ $user->id }}/update">
     @csrf
     @method('PUT')
-    <div class="field">
+    <div class="field two">
       <div class="input">
-        <div class="input">
-          <label for="email">Email<sup style="color:#f00">*</sup></label>
-          <input type="text" id="email" value="{{ $user->email }}">
-        </div>
+        <label for="email">Email<sup style="color:#f00">*</sup></label>
+        <input type="text" id="email" value="{{ $user->email }}">
       </div>
       <div class="input">
-        <div class="input">
-          <label for="password">Password<sup style="color:#f00">*</sup></label>
-          <input type="password" id="password">
-        </div>
+        <label for="password">Password<sup style="color:#f00">*</sup></label>
+        <input type="password" id="password">
       </div>
     </div>
     <div class="field">
